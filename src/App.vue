@@ -43,10 +43,11 @@
     margin-bottom: 8px;
     font-size: 18px;
     line-height: 16px;
+    font-weight: 500;
   }
 
   h1 {
-    font-size: 69px;
+    font-size: 60px;
     font-weight: 700;
   }
 }
@@ -61,7 +62,10 @@
 
 .home__section-button {
   width: 100%;
-  height: 80px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 16px;
   padding: 12px 24px;
   border-radius: 8px;
