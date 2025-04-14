@@ -1,13 +1,26 @@
+<script setup lang="ts">
+const onFocus = (e: Event) => {
+  setTimeout(
+    () =>
+      document.documentElement.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth",
+      }),
+    300
+  );
+};
+</script>
+
 <template>
   <section class="home">
     <header class="home__header"></header>
 
     <main class="home__main">
-      <p v-for="i in 100">text</p>
+      <p v-for="i in 10">text</p>
     </main>
 
     <footer class="home__footer">
-      <input type="text" />
+      <input type="text" @focus="onFocus" />
     </footer>
   </section>
 </template>
