@@ -1,82 +1,52 @@
 <template>
-  <div class="home">
-    <section class="home__section home__section-hero">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
-        numquam.
-      </p>
-      <h1>Consectetur</h1>
-      <button class="home__section-button">Lorem ipsum dolor sit.</button>
-      <button class="home__section-button">
-        Lorem ipsum, dolor sit amet consectetur adipisicing.
-      </button>
-    </section>
+  <section class="home">
+    <header class="home__header"></header>
 
-    <section class="home__section home__section-info">
-      <h1>Lorem.</h1>
-      <a class="home__section-button">Lorem ipsum dolor sit.</a>
-    </section>
-  </div>
+    <main class="home__main">
+      <p v-for="i in 100">text</p>
+    </main>
+
+    <footer class="home__footer">
+      <input type="text" />
+    </footer>
+  </section>
 </template>
 
 <style scoped>
 .home {
-  height: 100dvh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-
-  scroll-snap-type: y mandatory;
-  color: black;
+  padding-block: 50px;
+  height: var(--tg-viewport-height);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-.home__section {
-  padding: 16px;
-  scroll-snap-align: start;
-  height: 90dvh;
+.home__header {
+  width: 100%;
+  height: 50px;
+  background-color: gray;
+}
 
+.home__main {
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 10px;
 
   p {
-    margin-bottom: 8px;
-    font-size: 18px;
-    line-height: 16px;
-    font-weight: 500;
-  }
-
-  h1 {
-    font-size: 60px;
-    font-weight: 700;
+    background-color: gray;
   }
 }
 
-.home__section-hero {
-  background: #fee5e1 url("/background.png") center/cover no-repeat;
-}
-
-.home__section-info {
-  background-color: #c3d6ff;
-}
-
-.home__section-button {
+.home__footer {
   width: 100%;
-  height: 62px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 16px;
-  padding: 12px 24px;
-  border-radius: 8px;
-  background-color: #000;
-  color: white;
-  font-size: 20px;
-  transition-duration: 0.3s;
-}
+  height: 50px;
+  background-color: #fff;
+  z-index: 100;
+  background-color: gray;
 
-.home__section-button:active {
-  background-color: #333;
-  scale: 0.95;
+  input {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
