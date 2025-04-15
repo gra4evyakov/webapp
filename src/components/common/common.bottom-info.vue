@@ -63,10 +63,12 @@ defineProps({
 @keyframes colors {
   to {
     color: white;
+    transform: translateY(0px);
   }
 
   from {
     color: rgb(255, 174, 0);
+    transform: translateY(15px);
   }
 }
 
@@ -76,6 +78,7 @@ defineProps({
 .bounce-leave-active {
   animation: bounce-in 0.5s reverse;
 }
+
 @keyframes bounce-in {
   0% {
     transform: scale(0);

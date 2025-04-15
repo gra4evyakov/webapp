@@ -6,11 +6,11 @@ const onClick = () => {
   document.querySelector(".container").classList.toggle("on");
   document.querySelector(".container").classList.toggle("off");
 
-  setTimeout(() => {
-    if (modelValue.value) {
-      window.Telegram.WebApp.openLink("https://google.com");
-    }
-  }, 500);
+  // setTimeout(() => {
+  //   if (modelValue.value) {
+  //     window.Telegram.WebApp.openLink("https://google.com");
+  //   }
+  // }, 500);
 };
 </script>
 
@@ -21,6 +21,8 @@ const onClick = () => {
       <div class="detail"></div>
       <div class="detail"></div>
     </div>
+    <div class="text off">OFF</div>
+    <div class="text on">ON</div>
   </div>
 </template>
 
@@ -48,17 +50,17 @@ const onClick = () => {
 
 .container.off {
   box-shadow: -2px -2px 4px 4px rgba(7, 7, 7, 0.5),
-    -8px 0 4px 4px rgba(7, 7, 7, 0.5), -8px 0 3px 1px rgba(255, 255, 255, 0.2),
+    -8px 0 4px 4px rgba(7, 7, 7, 0.5), -8px 0 3px 1px rgba(255, 0, 0, 0.2),
     4px 0 4px 4px rgba(7, 7, 7, 1), -3px 5px 3px 0 rgb(79 81 79),
-    8px 3px 2px 0 rgb(79 81 79), inset 0 0 3px 1px rgba(255, 255, 255, 0.5),
-    inset 0 0 24px 0 rgba(255, 255, 255, 0.5);
+    8px 3px 2px 0 rgb(79 81 79), inset 0 0 3px 1px rgba(255, 0, 0, 0.5),
+    inset 0 0 24px 0 rgba(255, 0, 0, 0.5);
 }
 .container.on {
-  box-shadow: -2px -2px 4px 4px rgb(255, 145, 0, 0.1),
-    -8px 0 4px 4px rgba(7, 7, 7, 0.5), 8px 0 3px 1px rgb(255, 145, 0, 0.2),
+  box-shadow: -2px -2px 4px 4px rgba(38, 255, 0, 0.1),
+    -8px 0 4px 4px rgba(7, 7, 7, 0.5), 8px 0 3px 1px rgba(60, 255, 0, 0.2),
     4px 0 4px 4px rgb(72, 72, 72), -3px 5px 3px 0 rgb(79 81 79),
-    8px 3px 2px 0 rgb(72, 72, 72), inset 0 0 3px 1px rgb(255, 174, 0),
-    inset 0 0 14px 0 rgb(255, 174, 0);
+    8px 3px 2px 0 rgb(72, 72, 72), inset 0 0 3px 1px rgb(13, 255, 0),
+    inset 0 0 14px 0 rgb(38, 255, 0);
 }
 .toggle {
   width: 60%;
@@ -67,6 +69,7 @@ const onClick = () => {
   border-radius: 100px;
   position: absolute;
   transition: all 0.4s ease-in;
+  z-index: 1;
 }
 .off .toggle {
   right: 40%;
@@ -74,20 +77,20 @@ const onClick = () => {
   box-shadow: 0px 8px 8px 0 rgba(0, 0, 0, 0.4),
     inset 0px -3px 3px 0 rgba(0, 0, 0, 1),
     inset 0 3px 2px 0 rgba(79, 81, 79, 0.5),
-    inset -2px 0px 3px 0 rgba(255, 255, 255, 0.5),
+    inset -2px 0px 3px 0 rgba(255, 0, 0, 0.5),
     /* rgba(255, 0, 0, 0.5) accent - dark when on */ inset 2px 0px 3px 0
-      rgb(117 117 117),
+      rgb(255, 0, 0),
     /* rgba(0, 255, 0, 0.1) accent - dark when off */ inset 0 0 0 0
-      rgba(0, 0, 0, 0);
+      rgba(255, 0, 0, 0);
 }
 .on .toggle {
   right: 0;
   box-shadow: 0px 8px 8px 0 rgba(0, 0, 0, 0.4),
     inset 0px -3px 3px 0 rgba(0, 0, 0, 1),
     inset 0 3px 2px 0 rgba(79, 81, 79, 0.5),
-    inset -2px 0px 3px 0 rgb(255, 174, 0),
+    inset -2px 0px 3px 0 rgb(51, 255, 0),
     /* rgba(255, 0, 0, 0.5) accent - dark when on */ inset 2px 0px 3px 0
-      rgb(255, 174, 0),
+      rgb(51, 255, 0),
     /* rgba(0, 255, 0, 0.1) accent - dark when off */ inset 0 0 0 0
       rgba(0, 0, 0, 0);
 }
@@ -112,5 +115,21 @@ const onClick = () => {
 }
 .detail:nth-child(2) {
   right: 10%;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.text.on {
+  left: 15%;
+  color: rgb(39, 197, 0);
+}
+.text.off {
+  right: 15%;
+  color: rgb(175, 0, 0);
 }
 </style>
