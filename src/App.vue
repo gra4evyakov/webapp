@@ -89,7 +89,14 @@ const onArrowClick = () => {
 
   scrollbar-width: none;
   color: #fafafa;
-  background: rgb(34, 34, 34);
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    url("./background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .home::-webkit-scrollbar {

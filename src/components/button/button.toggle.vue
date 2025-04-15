@@ -57,8 +57,8 @@ const onClick = () => {
   box-shadow: -2px -2px 4px 4px rgb(255, 145, 0, 0.1),
     -8px 0 4px 4px rgba(7, 7, 7, 0.5), 8px 0 3px 1px rgb(255, 145, 0, 0.2),
     4px 0 4px 4px rgb(72, 72, 72), -3px 5px 3px 0 rgb(79 81 79),
-    8px 3px 2px 0 rgb(72, 72, 72), inset 0 0 3px 1px rgb(220, 124, 0),
-    inset 0 0 14px 0 rgb(220, 124, 0);
+    8px 3px 2px 0 rgb(72, 72, 72), inset 0 0 3px 1px rgb(255, 174, 0),
+    inset 0 0 14px 0 rgb(255, 174, 0);
 }
 .toggle {
   width: 60%;
@@ -85,9 +85,9 @@ const onClick = () => {
   box-shadow: 0px 8px 8px 0 rgba(0, 0, 0, 0.4),
     inset 0px -3px 3px 0 rgba(0, 0, 0, 1),
     inset 0 3px 2px 0 rgba(79, 81, 79, 0.5),
-    inset -2px 0px 3px 0 rgb(255, 145, 0),
+    inset -2px 0px 3px 0 rgb(255, 174, 0),
     /* rgba(255, 0, 0, 0.5) accent - dark when on */ inset 2px 0px 3px 0
-      rgb(255, 145, 0),
+      rgb(255, 174, 0),
     /* rgba(0, 255, 0, 0.1) accent - dark when off */ inset 0 0 0 0
       rgba(0, 0, 0, 0);
 }

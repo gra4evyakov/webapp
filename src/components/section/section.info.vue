@@ -45,7 +45,7 @@ defineProps({
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: linear-gradient(0deg, rgb(7, 7, 7) 20%, rgb(170, 96, 0) 100%);
+  background: linear-gradient(0deg, rgb(7, 7, 7) 20%, rgb(255, 174, 0) 100%);
   opacity: 0;
   transition: all 0.5s ease-in-out;
   pointer-events: none;

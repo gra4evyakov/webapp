@@ -66,7 +66,7 @@ defineProps({
   }
 
   from {
-    color: rgb(255, 145, 0);
+    color: rgb(255, 174, 0);
   }
 }
 
