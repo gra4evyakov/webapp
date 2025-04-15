@@ -97,7 +97,8 @@ const onArrowClick = () => {
 
 .home__section {
   position: relative;
-  padding: 16px;
+  padding-inline: 16px;
+  padding-block: var(--area-top) var(--area-bottom);
   height: 100dvh;
   scroll-snap-align: start;
 
@@ -212,7 +213,7 @@ const onArrowClick = () => {
 .home__section-title {
   margin-bottom: 16px;
   text-align: start;
-  font-size: 68px;
+  font-size: 60px;
   font-weight: 700;
 }
 
