@@ -94,7 +94,7 @@ const onArrowClick = () => {
       rgba(0, 0, 0, 0.3) 0%,
       rgba(0, 0, 0, 0.3) 100%
     ),
-    url("./background.png");
+    url("/webapp/background.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
