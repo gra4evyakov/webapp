@@ -10,7 +10,7 @@
 .section-info {
   position: relative;
   padding-inline: 16px;
-  padding-block: var(--area-top) var(--area-bottom);
+  padding-block: calc(var(--area-top) + 8px) calc(var(--area-bottom) + 8px);
   height: 100dvh;
   scroll-snap-align: start;
 

@@ -11,6 +11,7 @@ defineProps({
 
 <template>
   <div class="common-title">
+    <h2>26-27 АПРЕЛЯ</h2>
     <h1>ИНТЕНСИВ</h1>
     <h2>«{{ title }}»</h2>
     <p>{{ subtitle }}</p>
@@ -27,14 +28,14 @@ defineProps({
   h1 {
     margin-bottom: 16px;
     text-align: start;
-    font-size: 60px;
+    font-size: 70px;
     font-weight: 700;
   }
 
   h2 {
     margin-bottom: 16px;
     text-align: start;
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 700;
   }
 

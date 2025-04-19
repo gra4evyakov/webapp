@@ -4,16 +4,23 @@ defineProps({
   title: {
     type: String,
   },
-  active: {
-    type: Boolean,
-  },
 });
+
+const priceFormater = (price) => {
+  const formater = new Intl.NumberFormat("ru-RU", {
+    style: "currency",
+    currency: "RUB",
+    minimumFractionDigits: 0,
+  });
+  return formater.format(price);
+};
 </script>
 
 <template>
   <div class="common-bottom">
+    <h1>СТОИМОСТЬ {{ priceFormater(5555) }}</h1>
     <Transition name="bounce">
-      <div v-if="!active" class="common-bottom__icon">
+      <div class="common-bottom__icon">
         <h5>{{ title }}</h5>
         <div class="common-bottom__arrow">
           <Arrow />
@@ -32,6 +39,14 @@ defineProps({
   gap: 16px;
   align-items: center;
   margin-top: auto;
+
+  h1 {
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 52px;
+    line-height: 60px;
+    font-weight: 700;
+  }
 
   h5 {
     font-size: 20px;
@@ -68,7 +83,7 @@ defineProps({
 
   from {
     color: rgb(255, 174, 0);
-    transform: translateY(15px);
+    transform: translateY(10px);
   }
 }
 
