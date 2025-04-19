@@ -1,13 +1,5 @@
-<script setup>
-defineProps({
-  active: {
-    type: Boolean,
-  },
-});
-</script>
-
 <template>
-  <section class="section-info" :class="{ 'section-info_active': active }">
+  <section class="section-info">
     <div class="section-info__content">
       <slot />
     </div>
@@ -36,22 +28,5 @@ defineProps({
   align-items: center;
   gap: 8px;
   z-index: 1;
-}
-
-.section-info::after {
-  content: "";
-  position: absolute;
-  height: 100dvh;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background: linear-gradient(0deg, rgb(7, 7, 7) 20%, rgb(255, 174, 0) 100%);
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-  pointer-events: none;
-}
-
-.section-info.section-info_active::after {
-  opacity: 1;
 }
 </style>

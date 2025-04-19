@@ -13,7 +13,7 @@ import { ButtonMain } from "./components/button";
 
 const CONTENT = [
   {
-    title: "деньгOFF.NET",
+    title: "ДЕНЬГOFF.NET",
     subtitle:
       "❝ Это не про «как заработать». Это про то, почему ты до сих пор в разрыве и как снова войти в поток. ❞",
     button: "ДАЛЕЕ",
@@ -49,9 +49,10 @@ const onArrowClick = () => {
 </script>
 
 <template>
-  <div ref="homeRef" class="home">
+  <div ref="homeRef" class="home" :class="{ home_active: active }">
     <div class="home__container">
       <SectionHero>
+        <CommonToggle v-model="active" />
         <CommonTitle
           :title="CONTENT[0].title"
           :subtitle="CONTENT[0].subtitle"
@@ -59,9 +60,9 @@ const onArrowClick = () => {
         <CommonNext :text="CONTENT[0].button" @click="onArrowClick" />
       </SectionHero>
 
-      <SectionInfo :active>
+      <SectionInfo>
         <Transition name="slide-fade">
-          <CommonList v-if="!active">
+          <CommonList>
             <CommonInfo
               :title="CONTENT[1].info[0].title"
               :subtitle="CONTENT[1].info[0].subtitle"
@@ -72,8 +73,8 @@ const onArrowClick = () => {
             />
           </CommonList>
         </Transition>
-        <CommonBottomInfo :active title="ВОЙТИ В ПОТОК">
-          <CommonToggle v-model="active" />
+        <CommonBottomInfo title="ВОЙТИ В ПОТОК">
+          <ButtonMain>ОПЛАТИТЬ</ButtonMain>
         </CommonBottomInfo>
       </SectionInfo>
     </div>
@@ -82,6 +83,7 @@ const onArrowClick = () => {
 
 <style scoped>
 .home {
+  position: relative;
   height: 100dvh;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -89,14 +91,29 @@ const onArrowClick = () => {
 
   scrollbar-width: none;
   color: #fafafa;
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.3) 100%
-    ),
-    url("/webapp/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #303030;
+}
+
+.home::after {
+  content: "";
+  position: fixed;
+  height: 100dvh;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: linear-gradient(0deg, #303030 20%, rgb(255, 174, 0) 100%);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.home__container {
+  position: relative;
+  z-index: 1;
+}
+
+.home.home_active::after {
+  opacity: 1;
 }
 
 .home::-webkit-scrollbar {
