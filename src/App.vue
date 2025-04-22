@@ -40,11 +40,17 @@ const CONTENT = [
 const homeRef = ref(null);
 const active = ref(false);
 
+const telegram = window.Telegram.WebApp;
+
 const onArrowClick = () => {
   homeRef.value.scrollTo({
     top: homeRef.value.scrollHeight,
     behavior: "smooth",
   });
+};
+
+const openPaymentForm = () => {
+  telegram.openLink("https://yookassa.ru/my/i/aAfHUtlVqB6m/l");
 };
 </script>
 
@@ -74,7 +80,7 @@ const onArrowClick = () => {
           </CommonList>
         </Transition>
         <CommonBottomInfo title="ВОЙТИ В ПОТОК">
-          <ButtonMain>ОПЛАТИТЬ</ButtonMain>
+          <ButtonMain @click="openPaymentForm">ОПЛАТИТЬ</ButtonMain>
         </CommonBottomInfo>
       </SectionInfo>
     </div>
