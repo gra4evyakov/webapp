@@ -50,7 +50,7 @@ const onArrowClick = () => {
 };
 
 const openPaymentForm = () => {
-  telegram.openLink("https://yookassa.ru/my/i/aAfHUtlVqB6m/l");
+  telegram.openLink("https://yookassa.ru/my/i/aAiBGsjsVn8E/l");
 };
 </script>
 
