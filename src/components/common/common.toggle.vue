@@ -23,6 +23,11 @@
         включ.ON
       </div>
     </div>
+    <Transition name="bounce">
+      <div v-if="!isOn">
+        <p>ПЕРЕКЛЮЧИ СОСТОЯНИЕ</p>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -64,14 +69,24 @@ body {
 
 .switch-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 20px;
   height: 100vh;
+
+  p {
+    margin-bottom: 4px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+    animation: colors 0.7s infinite alternate;
+  }
 }
 
 .switch {
   position: relative;
   width: 220px;
+  margin-top: 32px;
   padding: 8px;
 
   display: flex;
@@ -137,6 +152,36 @@ body {
 
   .label-off {
     color: #666;
+  }
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+    color: rgb(255, 174, 0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes colors {
+  to {
+    color: white;
+  }
+
+  from {
+    color: rgb(255, 174, 0);
   }
 }
 </style>
